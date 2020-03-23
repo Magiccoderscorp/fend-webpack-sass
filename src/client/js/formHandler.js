@@ -1,6 +1,7 @@
 function cleanResults() {
     document.getElementById('subjectivity').innerHTML = ''
     document.getElementById('polarity').innerHTML = ''
+    document.getElementById('textFound').innerHTML = ''
     document.getElementById('error').innerHTML = ''
 }
 
@@ -35,6 +36,7 @@ function handleSubmit(event) {
             .then(function (dataResult) {
                 document.getElementById('subjectivity').innerHTML = dataResult.subjectivity
                 document.getElementById('polarity').innerHTML = dataResult.polarity
+                document.getElementById('textFound').innerHTML = dataResult.text
                 document.getElementById('error').innerHTML = ''
             })
 
