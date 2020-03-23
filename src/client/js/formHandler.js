@@ -1,6 +1,14 @@
+function cleanResults() {
+    document.getElementById('subjectivity').innerHTML = ''
+    document.getElementById('polarity').innerHTML = ''
+    document.getElementById('error').innerHTML = ''
+}
+
 function handleSubmit(event) {
 
     event.preventDefault()
+
+    cleanResults();
 
     let formText = document.getElementById('inputText').value
 
@@ -13,7 +21,7 @@ function handleSubmit(event) {
             isURL: isURL,
             inputText: formText,
         };
-        console.log("::: Form Submitted :::")
+
         fetch('http://localhost:8081/sentiment', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -27,7 +35,7 @@ function handleSubmit(event) {
             .then(function (dataResult) {
                 document.getElementById('subjectivity').innerHTML = dataResult.subjectivity
                 document.getElementById('polarity').innerHTML = dataResult.polarity
-                document.getElementById('error').innerHTML = '';
+                document.getElementById('error').innerHTML = ''
             })
 
     } else {

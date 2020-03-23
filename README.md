@@ -29,16 +29,5 @@ git clone -- git@github.com:[your-user-name]/webpack-express.git --
 - npm run build-dev
 - start node with ```node src/server/index.js```
 
-## Test
-
-Create a file with *name.test.js* for example
-
-```
-const sum = require('./sum')
-
-test('suma dos numeros', () => {
-    expect(sum(1,2)).toBe(3)
-})
-```
 
 Run *npm run test* and if test are ok you will see in the console

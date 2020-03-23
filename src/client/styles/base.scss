@@ -1,15 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Megrim|Roboto:400,400i,700&display=swap');
+
 body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #cccccc;
+  background-color: #121212;
+  color: #cccccc;
 }
 
-main {
+#main {
   flex: 2;
+  padding: 20px;
 }
 
 section {
   max-width: 800px;
   margin: 50px auto;
+}
+#results {
+  border-radius: 8px;
+  padding: 40px;
+  background: linear-gradient(to bottom, #444, #121212);
+  -webkit-box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.75);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#polarity, #subjectivity {
+  padding: 30px;
+  font-weight: bolder;
+}
+
+h2{
+  font-family: 'Megrim', cursive;
+  font-size: 1.2em;
 }

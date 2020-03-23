@@ -8,7 +8,7 @@
 <body>
 
 <header>
-    <div class="">
+    <div class="logo">
         Logo
     </div>
     <div class="">
@@ -16,26 +16,27 @@
     </div>
 </header>
 
-<main>
+<div id="main">
     <section>
         <form class="" onsubmit="return Client.handleSubmit(event)">
+            <h2>Text/URL Analizer:</h2><br>
+
             <input id="inputText" type="text" name="input" value="" onblur="onBlur()"
-                   placeholder="Insert Text or URL here">
-            <span id="error"></span><br>
+                   placeholder="Insert Text or URL here" />
+            <span id="error"></span><br/>
             <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
                    onsubmit="return handleSubmit(event)">
         </form>
         <section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="polarity"></div>
-                <div id="subjectivity"></div>
-            </section>
-</main>
+        <section id="results">
+            <h2>Analysis results:</h2><br>
+            Polarity: <div id="polarity"></div>
+            Subjectivity: <div id="subjectivity"></div>
+        </section>
+</div>
 
 <footer>
-    <p>This is a footer</p>
+    <p>&copy;2020 MagicCoders</p>
 </footer>
 
 <script>
