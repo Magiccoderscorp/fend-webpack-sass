@@ -27,12 +27,13 @@ function handleSubmit(event) {
             .then(function (dataResult) {
                 document.getElementById('subjectivity').innerHTML = dataResult.subjectivity
                 document.getElementById('polarity').innerHTML = dataResult.polarity
+                document.getElementById('error').innerHTML = '';
             })
 
     } else {
-        console.log("::: dio falso :::")
+        document.getElementById('error').innerHTML = 'Text or URL is required'
     }
 
 }
 
-export { handleSubmit }
+export {handleSubmit}

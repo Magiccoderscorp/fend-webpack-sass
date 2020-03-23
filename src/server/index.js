@@ -3,16 +3,9 @@ dotenv.config();
 
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
 var bodyParser = require('body-parser')
 var cors = require('cors')
 var aylien = require("aylien_textapi");
-
-var json = {
-    'title': 'test json response',
-    'message': 'this is a message',
-    'time': 'now'
-}
 
 const app = express()
 app.use(cors())
@@ -20,12 +13,10 @@ app.use(cors())
 app.use(bodyParser.json())
 // to use url encoded values
 app.use(bodyParser.urlencoded({
-  extended: true
+    extended: true
 }))
 
 app.use(express.static('dist'))
-
-console.log(JSON.stringify(mockAPIResponse))
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -36,10 +27,10 @@ app.post('/sentiment', function (req, res) {
         application_id: process.env.API_ID,
         application_key: process.env.API_KEY
     });
-    if(req.body.isURL){
+    if (req.body.isURL) {
         textapi.sentiment({
             'url': req.body.inputText
-        }, function(error, response) {
+        }, function (error, response) {
             if (error === null) {
                 console.log(response)
                 res.send(response);
@@ -48,7 +39,7 @@ app.post('/sentiment', function (req, res) {
     } else {
         textapi.sentiment({
             'text': req.body.inputText
-        }, function(error, response) {
+        }, function (error, response) {
             if (error === null) {
                 console.log(response)
                 res.send(response);

@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>
 
-    <body>
+<body>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+<header>
+    <div class="">
+        Logo
+    </div>
+    <div class="">
+        navigation
+    </div>
+</header>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="inputText" type="text" name="input" value="" onblur="onBlur()" placeholder="Insert Text here">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            <section>
+<main>
+    <section>
+        <form class="" onsubmit="return Client.handleSubmit(event)">
+            <input id="inputText" type="text" name="input" value="" onblur="onBlur()"
+                   placeholder="Insert Text or URL here">
+            <span id="error"></span><br>
+            <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                   onsubmit="return handleSubmit(event)">
+        </form>
+        <section>
 
             <section>
                 <strong>Form Results:</strong>
                 <div id="polarity"></div>
                 <div id="subjectivity"></div>
             </section>
-        </main>
+</main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
+<footer>
+    <p>This is a footer</p>
+</footer>
 
-        <script>
-            // Check that service workers are supported
-            if ('serviceWorker' in navigator) {
-                // Use the window load event to keep the page load performant
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
-                });
-            }
-        </script>
-    </body>
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
+</body>
 </html>

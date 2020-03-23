@@ -1,10 +1,5 @@
 function checkInputText(inputText) {
-
-    if (inputText === '') {
-        alert('Please insert text')
-        return false
-    }
-    return true;
+    return inputText !== '';
 }
 
 export {checkInputText}
