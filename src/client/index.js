@@ -1,5 +1,6 @@
 import { handleSubmit } from './js/formHandler'
 import { checkInputText } from './js/checkInput'
+import { isURL } from "./js/isURL";
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -11,5 +12,6 @@ console.log('index.js of view loaded');
 
 export {
     handleSubmit,
-    checkInputText
+    checkInputText,
+    isURL
 }

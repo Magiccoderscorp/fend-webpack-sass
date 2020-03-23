@@ -6,8 +6,11 @@ function handleSubmit(event) {
 
     const isValidText = Client.checkInputText(formText)
 
+    const isURL = Client.isURL(formText);
+
     if (isValidText) {
         const data = {
+            isURL: isURL,
             inputText: formText,
         };
         console.log("::: Form Submitted :::")

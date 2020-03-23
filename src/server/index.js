@@ -36,14 +36,26 @@ app.post('/sentiment', function (req, res) {
         application_id: process.env.API_ID,
         application_key: process.env.API_KEY
     });
-    textapi.sentiment({
-        'text': req.body.inputText,
-        'mode': 'tweet'
-    }, function(error, response) {
-        if (error === null) {
-            res.send(response);
-        }
-    });
+    if(req.body.isURL){
+        textapi.sentiment({
+            'url': req.body.inputText
+        }, function(error, response) {
+            if (error === null) {
+                console.log(response)
+                res.send(response);
+            }
+        });
+    } else {
+        textapi.sentiment({
+            'text': req.body.inputText
+        }, function(error, response) {
+            if (error === null) {
+                console.log(response)
+                res.send(response);
+            }
+        });
+    }
+
 })
 
 // designates what port the app will listen to for incoming requests
