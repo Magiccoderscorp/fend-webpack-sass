@@ -31,23 +31,22 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
-app.get('/test', function (req, res) {
-    console.log(`Your API key is ${process.env.API_KEY}`);
+app.post('/sentiment', function (req, res) {
     var textapi = new aylien({
         application_id: process.env.API_ID,
         application_key: process.env.API_KEY
     });
     textapi.sentiment({
-        'text': 'John is a very good football player!'
+        'text': req.body.inputText,
+        'mode': 'tweet'
     }, function(error, response) {
         if (error === null) {
-            console.log(response);
+            res.send(response);
         }
     });
-    res.json(mockAPIResponse);
 })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
+    console.log('App listening on port 8081!')
 })
