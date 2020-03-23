@@ -1,33 +1,30 @@
-# Webbpack Express Example App
+# Project Evaluate a News Article with Natural Language Processing
 
-The goal of this repo is be an example of a basic but functional app built on Express and Webpack.
+This project requires you to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites.
 
-## What we will cover
+This project is using *Aylien*, a News Intelligence Platform 
 
-We will cover:
+## Technologies
 
-- Webpack entry point
-- Webpack output and dist folder
-- Webpack Loaders
-- Webpack Plugins
-- Webpack Mode
-- Tools for convenient Webpack development
+- [Webpack](https://webpack.js.org/)
+- [Node](https://nodejs.org/es/)
+- [Sass](https://sass-lang.com/)
+- [Aylien](https://aylien.com/)
+- [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers?hl=es)
 
-## Get Up and Running
+## Notes
 
-```
-git clone -- git@github.com:[your-user-name]/webpack-express.git --
-```
+The Aylien API has an endpoint named *sentiment* that accepts text or url, 
+then this project has possibility to analyze text or URLs and validates if the user put an input text.
 
-`cd` into your new folder and run:
-- ```npm install```
-- ```npm start``` to start the app
-- this app runs on localhost:8080, but you can of course edit that in server.js
+See more: [API Documentation](https://docs.aylien.com/textapi/endpoints/#sentiment-analysis)
 
-## Run
+If text is and URL, then, dynamically will analize URL from text, else, web page is going to analyze the text.
 
-- npm run build-dev
-- start node with ```node src/server/index.js```
+## Screenshots
 
-
-Run *npm run test* and if test are ok you will see in the console
+![capture0](screenshots/capture0.png)
+![capture1](screenshots/capture1.png)
+![capture2](screenshots/capture2.png)
+![capture3](screenshots/capture3.png)
+   
